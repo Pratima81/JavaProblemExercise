@@ -3,6 +3,8 @@
 	import java.io.IOException;
 	import java.nio.file.*;
 	import java.util.List;
+	import java.util.Scanner;
+import static java.lang.System.exit;
 
 	public class DisplayFileExample  
 	{  
@@ -15,7 +17,7 @@
 			try {    
       
 				 // create new file
-				 f = new File("C:\\Users\\N3431\\Desktop\\java tutorial");
+				 f = new File("");
 										 
 				 // array of files and directory
 				 paths = f.list();
@@ -159,14 +161,65 @@
 	// Main Method  
 	public static void main(String[] args)  
 		{  
-		
+			Scanner scanner = new Scanner(System.in);
 			//newFile();
 			//delFile();
-			searchFile();
+			//searchFile();
 			//printFileNames();
-			 
-			 
-		}  
-	}  
+			
+			//main menu: list file, submenu operations, close Program
+			
+			try{
+				//main menu: list file, submenu operations, close Program
+			} catch (Exception ex){
+               // System.out.println("Please enter an integer value between 1 and " + options.length);
+                scanner.next();
+            }
+			
+			
+			int option = 1;
+			
+			while (option!=9){
+            printMenu(options);
+            try {
+                option = scanner.nextInt();
+                switch (option){
+                    case 1: newFile(); break;
+                    case 2: delFile(); break;
+					case 3: searchFile(); break;
+					case 4: printFileNames(); break;
+                    case 5: exit(0);
+                }
+            }
+            catch (Exception ex){
+               // System.out.println("Please enter an integer value between 1 and " + options.length);
+                scanner.next();
+            }
+        }		 
+		} 
+
+
+
+
+	 public static void printMenu(String[] options){
+			for (String option : options){
+				System.out.println(option);
+			}
+			System.out.print("Choose your option : ");
+	}
+	
+	private static String[] options = {"1- newFile ",
+				"2- delFile",
+				"3- searchFile",
+				"4- printFileNames",
+				"5- exit"
+	};
+
+		
+}  
+	
+	
+	
+
 	
 	

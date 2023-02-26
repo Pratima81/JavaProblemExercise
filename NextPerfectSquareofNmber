@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class NextPerfectSquare {
+
+    public static void main(String[] args) {
+
+        System.out.println("Enter the number");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        int ans = isPerfectSquare(num);
+        System.out.print("The next perfect square of num is : " );
+        System.out.println(ans);
+
+    }
+
+    static int isPerfectSquare(int n){
+        int nextPerfectSquare=0;
+
+        if(n<0) {return 0;}
+        if(n==0) {return 1;}
+
+        for(int i=1; i< n;i++){
+             nextPerfectSquare = i*i;
+
+             if(nextPerfectSquare > n){
+                 break;
+             }
+
+        }
+
+
+        return nextPerfectSquare;
+    }
+}

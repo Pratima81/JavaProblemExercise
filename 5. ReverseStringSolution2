@@ -1,0 +1,48 @@
+public class ReverseString2 {
+
+    public static void main(String[] args){
+
+        //given string
+        String input = "Geeks For Geeks";
+
+        char[] ch = input.toCharArray();
+
+        System.out.println("Original String : ");
+        printArray(ch);
+
+        reverseArray(ch);
+        System.out.println("Reversed String : ");
+        printArray(ch);
+
+    }
+
+    static void reverseArray(char[] chs){
+
+        int start=0;
+        int end=chs.length-1;
+        char temp;
+
+        while(start < end){
+            temp = chs[start];
+            chs[start] = chs[end];
+            chs[end] = temp;
+
+            start++;
+            end--;
+
+        }
+
+    }
+
+
+
+    static void printArray(char[] chs){
+
+        for (char ch :  chs ) {
+            System.out.print(ch +" ");
+        }
+        System.out.println();
+
+    }
+
+}

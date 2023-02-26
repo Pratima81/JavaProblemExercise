@@ -3,7 +3,7 @@ public class ReverseString2 {
     public static void main(String[] args){
 
         //given string
-        String input = "Geeks For Geeks";
+        String input = "abcdef";
 
         char[] ch = input.toCharArray();
 

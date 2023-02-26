@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class checkConcatenatedSum {
+
+    public static void main(String[] args){
+
+        System.out.println("Enter the number n");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        System.out.println("Enter the catlen n");
+        int catlen = sc.nextInt();
+
+        //System.out.println(n%10);
+        int ans = checkConcatedSum(n, catlen);
+        System.out.println("The answer is : " +ans);
+
+    }
+
+    public static int checkConcatedSum(int n, int catlen){
+
+        int orgNUm = n;
+        int totalSum = 0;
+
+        while (n != 0){
+            //get the last number
+            int lastdigit = n%10;
+            int conCatSum = 0;
+
+            for(int i =0; i< catlen; i++){
+                conCatSum = (conCatSum * 10) + lastdigit;
+            }
+
+            totalSum = totalSum + conCatSum;
+            //now n contains the remaining num
+            n = n/10;
+
+        }
+
+        if(totalSum == orgNUm) {
+            return 1;
+        }else{
+            return 0;
+        }
+
+    }
+}

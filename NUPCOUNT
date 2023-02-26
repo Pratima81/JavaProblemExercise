@@ -1,0 +1,33 @@
+public class NUPCOUNT {
+    public static void main(String[] args) {
+
+        int[] a = {2, 3, 1, -6, 8, -3, -1,2};
+        int ans = nUpCount(a, 5);
+        System.out.println(ans);
+
+    }
+
+    static int nUpCount(int[] a, int n){
+
+        int upCount =0;
+        int partialsum = 0;
+        int prevpartialsum=0;
+
+        for (int i=0; i< a.length; i++){
+            prevpartialsum = partialsum;
+            partialsum = partialsum + a[i];
+
+            //from partialsum <= n to > n
+            if(prevpartialsum <= n && partialsum > n){
+                upCount++;
+            }
+
+        }
+        return upCount;
+
+    }
+}
+
+
+//Define the n-upcount of an array to be the number of times the partial sum goes from less than or equal to
+n to greater than n during the calculation of the sum of the elements of the array.

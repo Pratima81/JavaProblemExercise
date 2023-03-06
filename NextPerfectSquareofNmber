@@ -17,4 +17,25 @@ Examples
 | 0                       | 1                                                            |
 |-------------------------|--------------------------------------------------------------|
 | -5                      | 0                                                            |
- -------------------------|--------------------------------------------------------------
+-------------------------|--------------------------------------------------------------
+
+
+public class NextPerfectSquare {
+    public static void main(String[] args) {
+        int n = 36 ;
+        int ans = nextPerfectSquare(n);
+        System.out.println(ans);        
+    }
+
+    public static int nextPerfectSquare(int n) {    
+        
+        if(n<0){
+            return 0;
+        }else{
+            int nextN = (int)Math.floor(Math.sqrt(n)) + 1;	
+           
+	        return nextN * nextN;
+        }   
+    }
+    
+}

@@ -1,35 +1,20 @@
-import java.util.Scanner;
+Write a function nextPerfectSquare that returns the first perfect square that is greater than
+it's integer argument. A perfect square is an integer that is equal to some integer squared.
 
-public class NextPerfectSquare {
+For example 16 is a perfect square because 16 = 4*4. However 15 is not a perfect square because
+there is no integer n such that 15 = n*n.
 
-    public static void main(String[] args) {
-
-        System.out.println("Enter the number");
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-
-        int ans = isPerfectSquare(num);
-        System.out.print("The next perfect square of num is : " );
-        System.out.println(ans);
-
-    }
-
-    static int isPerfectSquare(int n){
-        int nextPerfectSquare=0;
-
-        if(n<0) {return 0;}
-        if(n==0) {return 1;}
-
-        for(int i=1; i< n;i++){
-             nextPerfectSquare = i*i;
-
-             if(nextPerfectSquare > n){
-                 break;
-             }
-
-        }
-
-
-        return nextPerfectSquare;
-    }
-}
+The signature of the function is
+int isPerfectSquare(int n)
+Examples
+ -------------------------|--------------------------------------------------------------
+| n                       | next perfect square                                          |
+|-------------------------|--------------------------------------------------------------|
+| 6                       | 9                                                            |
+|-------------------------|--------------------------------------------------------------|
+| 36                      | 49                                                           |
+|-------------------------|--------------------------------------------------------------|
+| 0                       | 1                                                            |
+|-------------------------|--------------------------------------------------------------|
+| -5                      | 0                                                            |
+ -------------------------|--------------------------------------------------------------

@@ -29,3 +29,43 @@ Examples:
  --------------------------------|--------------------------------------------------------------
 
 NOTE: To ease debugging, Will return a string array.
+
+
+static int[] distinctPositiveIntegers(int[] first, int[] second){
+        int count=0;
+        int[] narr;
+
+        if(first == null || second == null){
+            return null;
+        }
+        if(first.length ==0 || second.length ==0){
+            return new int[] {};  //returning empty error
+        }
+
+
+        for(int i = 0; i< first.length ; i++){
+            for(int j= 0; j<second.length;j++){
+                if(first[i] == second[j]){
+                    count++;
+                }
+            }
+        }
+
+        if(count ==0){
+            return new int[0];
+        }
+
+        narr=new int[count]; int k=0;
+
+        for(int i = 0; i< first.length ; i++){
+            for(int j= 0; j<second.length;j++){
+                if(first[i] == second[j]){
+                    narr[k] = first[i];
+                    k++;
+                }
+            }
+        }       
+
+        return narr;
+
+    }
